@@ -1,58 +1,55 @@
-# Toxicity Comment Classification
+# ToxiScan- Multi-Label Toxic Comment Detection
 
-A machine learning project to classify toxic comments using deep learning and NLP techniques.
-
-This repository follows a clean, production-style structure with notebooks for experimentation and modular Python scripts for core logic.
-
----
-
-## 📁 Project Structure
-
-toxicity-classifier/
-│
-├── notebooks/ # Jupyter notebooks for experiments & analysis
-│ └── Toxicity.ipynb
-│
-├── src/ # Core source code (data processing, model, training)
-│
-├── models/ # Saved trained models (.h5 / .pt)
-│
-├── data/ # Dataset directory (ignored by git)
-│
-├── .gitignore
-└── README.md
-
+ToxiScan is an end-to-end NLP system for detecting multiple forms of toxicity in online comments, such as toxic, obscene, threat, insult, and identity-based hate.  
+The project is built using a Bi-directional LSTM model trained on the Jigsaw Toxic Comment dataset and supports real-time inference through a Gradio interface.
 
 ---
 
-## 🛠 Tech Stack
+## Key Features
 
-- Python
-- TensorFlow / Keras
-- NumPy, Pandas
-- NLP (Text Vectorization, Embeddings)
-
----
-
-## 🚀 Workflow
-
-1. Experiments and exploration are done in `notebooks/`
-2. Reusable logic is moved to `src/`
-3. Trained models are saved in `models/`
-4. Datasets are kept locally or loaded from external sources
+- Multi-label toxic comment classification
+- Text preprocessing using TensorFlow TextVectorization
+- Efficient `tf.data` pipeline for training
+- Bi-directional LSTM with learned word embeddings
+- Model evaluation using precision, recall, and accuracy
+- Interactive Gradio-based inference interface
 
 ---
 
-## 📌 Current Status
+## Model Overview
 
-- Project structure initialized
-- Notebook and directories set up
-- Implementation will be added incrementally
+- Architecture: Embedding → BiLSTM → Dense layers → Sigmoid outputs  
+- Loss Function: Binary Crossentropy  
+- Optimizer: Adam  
+- Output: Independent probabilities for each toxicity category
 
 ---
 
-## 📄 Notes
+## Dataset
 
-- Large datasets are not pushed to GitHub
-- Models may be versioned selectively
-- This repository is actively being developed
+This project uses the **Jigsaw Toxic Comment Classification Challenge** dataset.
+
+Dataset source:  
+https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge
+
+
+---
+
+## Running the Project
+
+- Install required Python dependencies (TensorFlow, Pandas, Gradio)
+- Download the Jigsaw dataset and place `train.csv` inside the `data/` directory
+- Run `notebooks/Toxicity.ipynb` to train the model and launch the Gradio interface
+
+---
+
+## Tech Stack
+
+Python, TensorFlow, Keras, NLP, BiLSTM, Gradio
+
+---
+
+## Author
+
+**Vyom Chaturvedi**  
+CSE undergrad
