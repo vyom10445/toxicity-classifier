@@ -35,13 +35,6 @@ https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge
 
 ---
 
-## Running the Project
-
-- Install required Python dependencies (TensorFlow, Pandas, Gradio)
-- Download the Jigsaw dataset and place `train.csv` inside the `data/` directory
-- Run `notebooks/Toxicity.ipynb` to train the model and launch the Gradio interface
-
----
 
 ## Tech Stack
 
